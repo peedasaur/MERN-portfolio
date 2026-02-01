@@ -1,0 +1,84 @@
+const form = document.getElementById('contactForm');
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const messageInput = document.getElementById('message');
+const toast = document.getElementById('toast');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    if (validateForm()) {
+        // Simulate form submission
+        const submitBtn = form.querySelector('.submit-btn');
+        const originalText = submitBtn.innerHTML;
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+        setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+            showToast();
+            form.reset();
+        }, 1500);
+    }
+});
+
+function validateForm() {
+    let isValid = true;
+
+    // Name validation
+    if (nameInput.value.trim() === '') {
+        setError(nameInput);
+        isValid = false;
+    } else {
+        removeError(nameInput);
+    }
+
+    // Email validation
+    if (emailInput.value.trim() === '' || !isValidEmail(emailInput.value)) {
+        setError(emailInput);
+        isValid = false;
+    } else {
+        removeError(emailInput);
+    }
+
+    // Message validation
+    if (messageInput.value.trim() === '') {
+        setError(messageInput);
+        isValid = false;
+    } else {
+        removeError(messageInput);
+    }
+
+    return isValid;
+}
+
+function setError(element) {
+    const group = element.parentElement;
+    group.classList.add('error');
+}
+
+function removeError(element) {
+    const group = element.parentElement;
+    group.classList.remove('error');
+}
+
+function isValidEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+function showToast() {
+    toast.classList.add('show');
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3000);
+}
+
+// Clear errors on input
+[nameInput, emailInput, messageInput].forEach(input => {
+    input.addEventListener('input', () => {
+        removeError(input);
+    });
+});

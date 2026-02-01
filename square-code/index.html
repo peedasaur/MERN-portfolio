@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="calc-container">
+        <h1>Power Chain</h1>
+
+        <div class="inputs-grid">
+            <div class="input-box">
+                <label>Base Value</label>
+                <input type="number" id="input1" placeholder="x">
+                <span class="formula">x¹</span>
+            </div>
+
+            <div class="input-box">
+                <label>Squared</label>
+                <input type="number" id="input2" placeholder="x²">
+                <span class="formula">x²</span>
+            </div>
+
+            <div class="input-box">
+                <label>Cubed</label>
+                <input type="number" id="input3" placeholder="x³">
+                <span class="formula">x³</span>
+            </div>
+
+            <div class="input-box">
+                <label>To the 4th</label>
+                <input type="number" id="input4" placeholder="x⁴">
+                <span class="formula">x⁴</span>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../shared/navigation.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

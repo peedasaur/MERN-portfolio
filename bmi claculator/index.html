@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="bmi-card">
+        <div class="icon"><i class="fas fa-weight-scale"></i></div>
+        <h1>BMI Calculator</h1>
+
+        <div class="input-group">
+            <label for="weight">Weight (kg)</label>
+            <input type="number" id="weight" placeholder="e.g. 70" min="1">
+        </div>
+
+        <div class="input-group">
+            <label for="height">Height (cm)</label>
+            <input type="number" id="height" placeholder="e.g. 175" min="1">
+        </div>
+
+        <button onclick="calculateBMI()">Calculate</button>
+
+        <div class="result" id="resultBox">
+            <div class="bmi-value" id="bmiValue">0.0</div>
+            <div class="bmi-status" id="bmiStatus">Normal</div>
+        </div>
+    </div>
+
+    <script type="module" src="../shared/navigation.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

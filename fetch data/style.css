@@ -1,0 +1,92 @@
+@import url('../style.css');
+
+:root {
+    --primary: #8b5cf6;
+    --bg-dark: #0f172a;
+    --text-main: #f8fafc;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+    /* Space for fixed header/back btn */
+    min-height: 100vh;
+}
+
+.data-container {
+    width: 90%;
+    max-width: 800px;
+    background: #1e293b;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    margin-bottom: 2rem;
+    color: var(--primary);
+}
+
+button {
+    padding: 12px 24px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #7c3aed;
+}
+
+button:disabled {
+    background: #475569;
+    cursor: not-allowed;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 1rem;
+    border-bottom: 1px solid #334155;
+}
+
+th {
+    background: #334155;
+    color: #cbd5e1;
+    font-weight: 600;
+}
+
+tr:hover {
+    background: rgba(139, 92, 246, 0.1);
+}
+
+.loading {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    margin-top: 2rem;
+}
+
+.error {
+    color: #ef4444;
+    margin-top: 2rem;
+}

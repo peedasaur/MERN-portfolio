@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch User Data</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="data-container">
+        <h1>User Directory</h1>
+        <button id="fetchBtn" onclick="fetchUsers()">
+            <i class="fas fa-cloud-download-alt"></i> Load Users
+        </button>
+
+        <div id="contentArea"></div>
+    </div>
+
+    <script type="module" src="../shared/navigation.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="weather-container">
+        <h1>Weather Now</h1>
+
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Enter City (e.g., London)">
+            <button class="btn-search" onclick="getWeather()">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <div class="error-msg" id="errorMsg"></div>
+
+        <div class="weather-info" id="weatherInfo">
+            <h2 id="cityName">London</h2>
+            <div class="temp" id="tempDisplay">20°C</div>
+            <div class="condition" id="conditionDisplay">Clear Sky</div>
+
+            <div class="details">
+                <div class="detail-item">
+                    <span class="label">Wind Speed</span>
+                    <span class="value" id="windDisplay">5 km/h</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../shared/navigation.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

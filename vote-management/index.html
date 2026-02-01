@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="vote-container">
+        <h1><i class="fas fa-vote-yea"></i> Election 2024</h1>
+
+        <div class="party-grid">
+            <div class="party-card">
+                <span class="party-name">Party A</span>
+                <button class="btn-vote" onclick="castVote('Party A')">Vote</button>
+            </div>
+            <div class="party-card">
+                <span class="party-name">Party B</span>
+                <button class="btn-vote" onclick="castVote('Party B')">Vote</button>
+            </div>
+            <div class="party-card">
+                <span class="party-name">Party C</span>
+                <button class="btn-vote" onclick="castVote('Party C')">Vote</button>
+            </div>
+            <div class="party-card">
+                <span class="party-name">Party D</span>
+                <button class="btn-vote" onclick="castVote('Party D')">Vote</button>
+            </div>
+        </div>
+
+        <button class="btn-result" onclick="showResult()">Show Results</button>
+
+        <div class="result-overlay" id="resultBox">
+            <h3>And the winner is...</h3>
+            <div class="winner-text" id="winnerText"></div>
+        </div>
+    </div>
+
+    <script type="module" src="../shared/navigation.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
