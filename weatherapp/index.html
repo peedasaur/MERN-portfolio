@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,27 +11,45 @@
 
 <body>
 
-    <div class="weather-container">
-        <h1>Weather Now</h1>
-
-        <div class="search-box">
-            <input type="text" id="cityInput" placeholder="Enter City (e.g., London)">
-            <button class="btn-search" onclick="getWeather()">
+    <div class="weather-wrapper">
+        <div class="search-section">
+            <div class="input-container">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" id="cityInput" placeholder="Search City...">
+            </div>
+            <button class="search-btn" onclick="getWeather()">
                 <i class="fas fa-search"></i>
             </button>
         </div>
 
         <div class="error-msg" id="errorMsg"></div>
 
-        <div class="weather-info" id="weatherInfo">
-            <h2 id="cityName">London</h2>
-            <div class="temp" id="tempDisplay">20°C</div>
-            <div class="condition" id="conditionDisplay">Clear Sky</div>
+        <div class="weather-card" id="weatherInfo">
+            <div class="weather-header">
+                <div>
+                    <h2 id="cityName">New York, US</h2>
+                    <span class="date">Today's Weather</span>
+                </div>
+                <div class="condition-badge" id="conditionDisplay">Sunny</div>
+            </div>
 
-            <div class="details">
-                <div class="detail-item">
-                    <span class="label">Wind Speed</span>
-                    <span class="value" id="windDisplay">5 km/h</span>
+            <div class="weather-body">
+                <div class="temp-display" id="tempDisplay">24Â°</div>
+                <div class="weather-visual">
+                    
+                    <i class="fas fa-cloud-sun"></i>
+                </div>
+            </div>
+
+            <div class="weather-details">
+                <div class="detail-box">
+                    <span class="label">Wind</span>
+                    <span class="val" id="windDisplay">12 km/h</span>
+                </div>
+                <div class="detail-box">
+                    <span class="label">Humidity</span>
+                    <span class="val">--%</span>
+                    
                 </div>
             </div>
         </div>

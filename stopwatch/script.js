@@ -1,4 +1,4 @@
-let startTime;
+﻿let startTime;
 let elapsedTime = 0;
 let timerInterval;
 let isRunning = false;
@@ -27,16 +27,16 @@ function updateDisplay(time) {
 
 function startStop() {
     if (isRunning) {
-        // Stop
+        
         clearInterval(timerInterval);
         isRunning = false;
         startStopBtn.innerHTML = '<i class="fas fa-play"></i> Start';
         startStopBtn.classList.remove('running');
-        startStopBtn.style.backgroundColor = '#10b981'; // Green
+        
         statusText.textContent = "Paused";
         statusDot.classList.remove('active');
     } else {
-        // Start
+        
         startTime = Date.now() - elapsedTime;
         timerInterval = setInterval(() => {
             elapsedTime = Date.now() - startTime;
@@ -46,7 +46,7 @@ function startStop() {
         isRunning = true;
         startStopBtn.innerHTML = '<i class="fas fa-pause"></i> Stop';
         startStopBtn.classList.add('running');
-        startStopBtn.style.backgroundColor = '#ef4444'; // Red
+        
         statusText.textContent = "Running";
         statusDot.classList.add('active');
     }
@@ -60,7 +60,7 @@ function reset() {
 
     startStopBtn.innerHTML = '<i class="fas fa-play"></i> Start';
     startStopBtn.classList.remove('running');
-    startStopBtn.style.backgroundColor = '#10b981';
+    
 
     statusText.textContent = "Stopped";
     statusDot.classList.remove('active');
@@ -69,5 +69,6 @@ function reset() {
 startStopBtn.addEventListener('click', startStop);
 resetBtn.addEventListener('click', reset);
 
-// Initialize display
+
 updateDisplay(0);
+

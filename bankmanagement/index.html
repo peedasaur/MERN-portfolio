@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,27 +9,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-
+https://github.com/peedasaur/MERN-portfolio
 <body>
 
     <div class="banking-card">
-        <div class="icon"><i class="fas fa-wallet"></i></div>
-        <h1>My Wallet</h1>
+        <header>
+            <div class="icon"><i class="fas fa-wallet"></i></div>
+            <h1>Smart Wallet</h1>
+        </header>
 
-        <div class="balance-box">
-            <h2>Current Balance</h2>
-            <div class="amount" id="balanceDisplay">$1,000</div>
+        <div class="balance-container">
+            <span class="label">Total Balance</span>
+            <div class="amount" id="balanceDisplay">$1,000.00</div>
         </div>
 
-        <div class="controls">
-            <input type="number" id="amountInput" placeholder="Enter Amount" min="1">
+        <div class="actions">
+            <div class="input-group">
+                <input type="number" id="amountInput" placeholder="0.00" min="0.01" step="0.01">
+                <label for="amountInput">Enter Amount ($)</label>
+            </div>
 
             <div class="btn-group">
-                <button class="btn-deposit" onclick="deposit()">
-                    <i class="fas fa-plus-circle"></i> Deposit
+                <button class="btn btn-deposit" onclick="deposit()">
+                    <i class="fas fa-arrow-down"></i> Deposit
                 </button>
-                <button class="btn-withdraw" onclick="withdraw()">
-                    <i class="fas fa-minus-circle"></i> Withdraw
+                <button class="btn btn-withdraw" onclick="withdraw()">
+                    <i class="fas fa-arrow-up"></i> Withdraw
                 </button>
             </div>
         </div>

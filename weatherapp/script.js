@@ -1,8 +1,8 @@
-const cityInput = document.getElementById('cityInput');
+﻿const cityInput = document.getElementById('cityInput');
 const weatherInfo = document.getElementById('weatherInfo');
 const errorMsg = document.getElementById('errorMsg');
 
-// WMO Weather interpretation codes
+
 function getWeatherDescription(code) {
     const codes = {
         0: 'Clear sky',
@@ -24,7 +24,7 @@ async function getWeather() {
     weatherInfo.classList.remove('active');
 
     try {
-        // 1. Geocoding
+        
         const geoReq = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1&language=en&format=json`);
         const geoData = await geoReq.json();
 
@@ -34,15 +34,15 @@ async function getWeather() {
 
         const { latitude, longitude, name, country } = geoData.results[0];
 
-        // 2. Weather
+        
         const weatherReq = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`);
         const weatherData = await weatherReq.json();
 
         const current = weatherData.current_weather;
 
-        // 3. Update UI
+        
         document.getElementById('cityName').textContent = `${name}, ${country}`;
-        document.getElementById('tempDisplay').textContent = `${current.temperature}°C`;
+        document.getElementById('tempDisplay').textContent = `${current.temperature}Â°C`;
         document.getElementById('conditionDisplay').textContent = getWeatherDescription(current.weathercode);
         document.getElementById('windDisplay').textContent = `${current.windspeed} km/h`;
 
@@ -54,9 +54,10 @@ async function getWeather() {
     }
 }
 
-// Allow Enter key
+
 cityInput.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         getWeather();
     }
 });
+

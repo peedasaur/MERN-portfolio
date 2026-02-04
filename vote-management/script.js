@@ -1,4 +1,4 @@
-let votes = {
+﻿let votes = {
     'Party A': 0,
     'Party B': 0,
     'Party C': 0,
@@ -26,7 +26,7 @@ function showResult() {
     const resultBox = document.getElementById('resultBox');
     const winnerText = document.getElementById('winnerText');
 
-    resultBox.style.display = 'block';
+    resultBox.style.display = 'flex';
 
     if (maxVotes === 0) {
         winnerText.textContent = "No votes cast yet!";
@@ -36,3 +36,4 @@ function showResult() {
         winnerText.textContent = `${winners[0]} with ${maxVotes} votes!`;
     }
 }
+

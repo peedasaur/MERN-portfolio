@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,33 +11,48 @@
 
 <body>
 
-    <div class="vote-container">
-        <h1><i class="fas fa-vote-yea"></i> Election 2024</h1>
+    <div class="vote-wrapper">
+        <header>
+            <div class="seal-icon"><i class="fas fa-vote-yea"></i></div>
+            <h1>Election 2026</h1>
+            <p>Secure Voting System</p>
+        </header>
 
-        <div class="party-grid">
-            <div class="party-card">
-                <span class="party-name">Party A</span>
-                <button class="btn-vote" onclick="castVote('Party A')">Vote</button>
+        <div class="candidates-grid">
+            <div class="candidate-card" onclick="castVote('Party A')">
+                <div class="party-logo color-a">A</div>
+                <h3>Party A</h3>
+                <button class="vote-btn">Vote</button>
             </div>
-            <div class="party-card">
-                <span class="party-name">Party B</span>
-                <button class="btn-vote" onclick="castVote('Party B')">Vote</button>
+            <div class="candidate-card" onclick="castVote('Party B')">
+                <div class="party-logo color-b">B</div>
+                <h3>Party B</h3>
+                <button class="vote-btn">Vote</button>
             </div>
-            <div class="party-card">
-                <span class="party-name">Party C</span>
-                <button class="btn-vote" onclick="castVote('Party C')">Vote</button>
+            <div class="candidate-card" onclick="castVote('Party C')">
+                <div class="party-logo color-c">C</div>
+                <h3>Party C</h3>
+                <button class="vote-btn">Vote</button>
             </div>
-            <div class="party-card">
-                <span class="party-name">Party D</span>
-                <button class="btn-vote" onclick="castVote('Party D')">Vote</button>
+            <div class="candidate-card" onclick="castVote('Party D')">
+                <div class="party-logo color-d">D</div>
+                <h3>Party D</h3>
+                <button class="vote-btn">Vote</button>
             </div>
         </div>
 
-        <button class="btn-result" onclick="showResult()">Show Results</button>
+        <div class="action-area">
+            <button class="result-btn" onclick="showResult()">
+                <i class="fas fa-chart-bar"></i> View Final Results
+            </button>
+        </div>
 
-        <div class="result-overlay" id="resultBox">
-            <h3>And the winner is...</h3>
-            <div class="winner-text" id="winnerText"></div>
+        <div class="result-modal" id="resultBox">
+            <div class="modal-content">
+                <h3>Election Results</h3>
+                <div class="winner-display" id="winnerText"></div>
+                <button class="close-btn" onclick="this.closest('.result-modal').style.display='none'">Close</button>
+            </div>
         </div>
     </div>
 

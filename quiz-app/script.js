@@ -1,4 +1,4 @@
-const quizData = [
+﻿const quizData = [
     {
         question: "Which language runs in a web browser?",
         a: "Java",
@@ -59,7 +59,7 @@ loadQuiz();
 function loadQuiz() {
     deselectAnswers();
 
-    // Update Progress Bar
+    
     const progress = ((currentQuiz) / quizData.length) * 100;
     progressBar.style.width = `${progress}%`;
 
@@ -71,7 +71,7 @@ function loadQuiz() {
     c_text.innerText = currentQuizData.c;
     d_text.innerText = currentQuizData.d;
 
-    // Update button text on last question
+    
     if (currentQuiz === quizData.length - 1) {
         submitBtn.innerText = "Finish Quiz";
     } else {
@@ -106,7 +106,7 @@ submitBtn.addEventListener('click', () => {
         if (currentQuiz < quizData.length) {
             loadQuiz();
         } else {
-            // Full width progress on finish
+            
             progressBar.style.width = '100%';
 
             quiz.innerHTML = `
@@ -120,3 +120,4 @@ submitBtn.addEventListener('click', () => {
         }
     }
 });
+

@@ -1,4 +1,4 @@
-const form = document.getElementById('contactForm');
+﻿const form = document.getElementById('contactForm');
 const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
 const messageInput = document.getElementById('message');
@@ -8,7 +8,7 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     if (validateForm()) {
-        // Simulate form submission
+        
         const submitBtn = form.querySelector('.submit-btn');
         const originalText = submitBtn.innerHTML;
 
@@ -27,7 +27,7 @@ form.addEventListener('submit', (e) => {
 function validateForm() {
     let isValid = true;
 
-    // Name validation
+    
     if (nameInput.value.trim() === '') {
         setError(nameInput);
         isValid = false;
@@ -35,7 +35,7 @@ function validateForm() {
         removeError(nameInput);
     }
 
-    // Email validation
+    
     if (emailInput.value.trim() === '' || !isValidEmail(emailInput.value)) {
         setError(emailInput);
         isValid = false;
@@ -43,7 +43,7 @@ function validateForm() {
         removeError(emailInput);
     }
 
-    // Message validation
+    
     if (messageInput.value.trim() === '') {
         setError(messageInput);
         isValid = false;
@@ -76,9 +76,10 @@ function showToast() {
     }, 3000);
 }
 
-// Clear errors on input
+
 [nameInput, emailInput, messageInput].forEach(input => {
     input.addEventListener('input', () => {
         removeError(input);
     });
 });
+

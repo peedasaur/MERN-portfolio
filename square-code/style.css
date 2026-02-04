@@ -1,9 +1,18 @@
-@import url('../style.css');
+﻿@import url('../style.css');
+
 
 :root {
-    --primary: #ec4899;
-    --bg-dark: #0f172a;
-    --text-main: #f8fafc;
+    --bg-dark: #2e1065;
+    
+    --surface: #4c1d95;
+    
+    --primary: #f472b6;
+    
+    --accent: #818cf8;
+    
+    --text-main: #ffffff;
+    --text-muted: #c4b5fd;
+    --border: rgba(255, 255, 255, 0.1);
 }
 
 body {
@@ -13,65 +22,137 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    font-family: 'Outfit', sans-serif;
+    background-image: linear-gradient(135deg, #2e1065 0%, #0f172a 100%);
+    padding: 2rem 0;
 }
 
-.calc-container {
-    background: #1e293b;
-    padding: 3rem;
-    border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    max-width: 500px;
-    width: 100%;
+body::before {
+    display: none;
+}
+
+.calc-wrapper {
+    width: 90%;
+    max-width: 450px;
+    z-index: 10;
+}
+
+header {
     text-align: center;
+    margin-bottom: 2rem;
+}
+
+.icon-header {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
 }
 
 h1 {
-    margin-bottom: 2rem;
-    background: linear-gradient(to right, #ec4899, #8b5cf6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.inputs-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-
-.input-box {
-    position: relative;
-    text-align: left;
-}
-
-label {
-    display: block;
+    font-size: 2rem;
+    font-weight: 700;
     margin-bottom: 0.5rem;
-    color: #cbd5e1;
+}
+
+p {
+    color: var(--text-muted);
     font-size: 0.9rem;
 }
 
-input {
-    width: 100%;
-    padding: 1rem;
-    background: #0f172a;
-    border: 1px solid #334155;
-    border-radius: 10px;
-    color: white;
-    font-size: 1.1rem;
-    outline: none;
+.chain-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    backdrop-filter: blur(10px);
     transition: all 0.3s;
+    animation: fadeInUp 0.5s ease backwards;
+    animation-delay: calc(var(--i) * 0.1s);
 }
 
-input:focus {
+.input-card:focus-within {
+    background: rgba(255, 255, 255, 0.1);
     border-color: var(--primary);
-    box-shadow: 0 0 10px rgba(236, 72, 153, 0.2);
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px -5px rgba(244, 114, 182, 0.2);
 }
 
-.formula {
-    position: absolute;
-    right: 15px;
-    top: 42px;
-    color: #64748b;
-    font-family: monospace;
+.input-card label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.input-field {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 0 1rem;
+    border: 1px solid transparent;
+}
+
+.input-field:focus-within {
+    border-color: var(--accent);
+}
+
+input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 0.8rem 0;
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Share Tech Mono', monospace;
+    
+    outline: none;
+}
+
+.input-field i {
+    color: var(--primary);
+    opacity: 0.7;
+}
+
+.link-arrow {
+    text-align: center;
+    color: var(--text-muted);
+    opacity: 0.5;
+    font-size: 0.9rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(3px);
+    }
 }

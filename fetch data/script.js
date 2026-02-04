@@ -1,8 +1,8 @@
-async function fetchUsers() {
+﻿async function fetchUsers() {
     const contentArea = document.getElementById('contentArea');
     const btn = document.getElementById('fetchBtn');
 
-    // Loading State
+    
     contentArea.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-spin"></i> Fetching data...</div>';
     btn.disabled = true;
     btn.textContent = 'Loading...';
@@ -13,7 +13,7 @@ async function fetchUsers() {
 
         const users = await response.json();
 
-        // Build Table
+        
         let tableHTML = `
             <div class="table-wrapper">
                 <table>
@@ -52,3 +52,4 @@ async function fetchUsers() {
         btn.innerHTML = '<i class="fas fa-sync-alt"></i> Refresh Data';
     }
 }
+

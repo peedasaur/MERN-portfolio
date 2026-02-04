@@ -1,4 +1,4 @@
-let balance = 1000;
+﻿let balance = 1000;
 const balanceDisplay = document.getElementById('balanceDisplay');
 const amountInput = document.getElementById('amountInput');
 const messageBox = document.getElementById('messageBox');
@@ -11,6 +11,7 @@ function updateDisplay() {
 function showMessage(text, type) {
     messageBox.textContent = text;
     messageBox.className = `message ${type}`;
+    messageBox.style.opacity = '1';
     setTimeout(() => {
         messageBox.style.opacity = '0';
     }, 3000);
@@ -47,5 +48,5 @@ function withdraw() {
     showMessage(`Successfully withdrew $${amount}`, 'success');
 }
 
-// Initial display
 updateDisplay();
+

@@ -1,4 +1,4 @@
-const taskInput = document.getElementById('taskInput');
+﻿const taskInput = document.getElementById('taskInput');
 const todoList = document.getElementById('todoList');
 const doneList = document.getElementById('doneList');
 const todoCount = document.getElementById('todoCount');
@@ -40,7 +40,7 @@ window.completeTask = function (btn) {
     const li = btn.closest('li');
     const text = li.querySelector('.text').textContent;
 
-    // Animation before move
+    
     li.style.transform = 'translateX(50px)';
     li.style.opacity = '0';
 
@@ -61,3 +61,4 @@ window.deleteTask = function (btn) {
         updateCounts();
     }, 300);
 }
+

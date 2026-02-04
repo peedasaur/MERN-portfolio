@@ -1,4 +1,4 @@
-function calculateBMI() {
+﻿function calculateBMI() {
     const weight = parseFloat(document.getElementById('weight').value);
     const heightCm = parseFloat(document.getElementById('height').value);
     const resultBox = document.getElementById('resultBox');
@@ -20,19 +20,20 @@ function calculateBMI() {
 
     if (bmi < 18.5) {
         status = 'Underweight';
-        color = '#3b82f6'; // Blue
+        color = '#3b82f6'; 
     } else if (bmi >= 18.5 && bmi < 25) {
         status = 'Normal Weight';
-        color = '#10b981'; // Green
+        color = '#10b981'; 
     } else if (bmi >= 25 && bmi < 30) {
         status = 'Overweight';
-        color = '#f59e0b'; // Orange
+        color = '#f59e0b'; 
     } else {
         status = 'Obese';
-        color = '#ef4444'; // Red
+        color = '#ef4444'; 
     }
 
     bmiStatus.innerHTML = `Category: <span style="color: ${color}">${status}</span>`;
 
     resultBox.classList.add('show');
 }
+
